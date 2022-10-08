@@ -1,69 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:library_api_mvvm/view/widgets/detail_screen.dart';
-import '../../../model/book_model.dart';
+import 'package:library_api_mvvm/model/book_model/volume_info.dart';
+import 'package:library_api_mvvm/view_model/book_provider.dart';
+import 'package:provider/provider.dart';
 
 class LibraryList extends StatelessWidget {
-  const LibraryList({Key? key, required this.booksList}) : super(key: key);
-  final List<Book> booksList;
+  const LibraryList({
+    Key? key,
+    // required this.booksList,
+  }) : super(key: key);
+  // final List<Book> booksList;
 
   @override
   Widget build(BuildContext context) {
+    final widgets = Provider.of<BookProvider>(context, listen: false);
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          const SizedBox(width: 20),
-          SizedBox(
-            height: 300,
-            child: ListView.separated(
-              physics: const BouncingScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: booksList.length,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (BuildContext context, int index) {
-                final book = booksList[index];
-                return Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 10),
-                      child: GestureDetector(
-                        onTap: () {
-                          showModalBottomSheet(
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(25))),
-                            context: context,
-                            isScrollControlled: true,
-                            builder: (context) {
-                              return buildSheet(book, context);
-                            },
-                          );
-                        },
-                        child: BookBuild(book: book),
-                      ),
-                    )
-                  ],
-                );
-              },
-              separatorBuilder: (BuildContext context, int index) {
-                return const SizedBox(width: 20);
-              },
-            ),
-          ),
-          const SizedBox(width: 20)
-        ],
-      ),
+      child: Consumer<BookProvider>(builder: (context, value, child) {
+        if (value.isFetching) {
+          return widgets.circularProgress();
+        } else {
+          return widgets.buildHomeBooks(value);
+        }
+      }),
     );
   }
 }
 
+// widgets
 class BookBuild extends StatelessWidget {
   const BookBuild({
     Key? key,
     required this.book,
   }) : super(key: key);
 
-  final Book book;
+  final VolumeInfo? book;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +47,7 @@ class BookBuild extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(book.image),
+              image: NetworkImage(book!.imageLinks!.thumbnail!),
             ),
             boxShadow: [
               BoxShadow(
@@ -98,7 +68,7 @@ class BookBuild extends StatelessWidget {
         SizedBox(
           width: 100,
           child: Text(
-            book.title,
+            book!.title!,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(fontSize: 15),
@@ -106,7 +76,7 @@ class BookBuild extends StatelessWidget {
         ),
         const SizedBox(height: 3),
         Text(
-          book.author,
+          book!.authors![0],
           style: const TextStyle(fontSize: 10, color: Colors.grey),
         )
       ],

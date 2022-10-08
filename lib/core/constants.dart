@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_api_mvvm/core/enums.dart';
 
 const Color backgroundColor = Color(0xFFF8F3ED);
 const Color rootColor = Color(0xFFDAA963);
@@ -20,5 +21,5 @@ const String audioBook = "assets/audiobook.jpg";
 // sizes
 const sizedbox = SizedBox(height: 30);
 
-const apiEndpoint =
-    "https://www.googleapis.com/books/v1/volumes?q=subject:health&download=epub&orderBy=newest&key=AIzaSyAqxw3nnCxwNQXRmXb-ZFi8FTNyhz6kwGA";
+const Section newAndTrending = Section.newAndTrending;
+const Section forYou = Section.forYou;

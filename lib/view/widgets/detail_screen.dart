@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:library_api_mvvm/core/constants.dart';
 import 'package:library_api_mvvm/model/book_model.dart';
+import 'package:library_api_mvvm/model/book_model/volume_info.dart';
 import 'package:library_api_mvvm/view/widgets/snackbar.dart';
 
-Widget buildSheet(Book book, context) {
+Widget buildSheet(VolumeInfo? book, context) {
   return Stack(
     children: [
       Column(
@@ -20,7 +21,7 @@ Widget buildSheet(Book book, context) {
           Padding(
             padding: const EdgeInsets.only(left: 30, right: 30),
             child: Text(
-              book.description,
+              book!.description!,
               textAlign: TextAlign.center,
             ),
           ),
@@ -40,7 +41,7 @@ class Cover extends StatelessWidget {
     Key? key,
     required this.book,
   }) : super(key: key);
-  final Book book;
+  final VolumeInfo? book;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,7 @@ class Cover extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage(book.image),
+            image: NetworkImage(book!.imageLinks!.smallThumbnail!),
           ),
           boxShadow: [
             BoxShadow(
@@ -143,7 +144,7 @@ class BottomCard extends StatelessWidget {
 class BookDetails extends StatelessWidget {
   const BookDetails({Key? key, required this.book}) : super(key: key);
 
-  final Book book;
+  final VolumeInfo? book;
 
   @override
   Widget build(BuildContext context) {
@@ -155,12 +156,12 @@ class BookDetails extends StatelessWidget {
         ),
         const SizedBox(height: 3),
         Text(
-          book.title,
+          book!.title!,
           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
         Text(
-          book.author,
+          book!.authors![0],
           style: const TextStyle(fontSize: 14, color: Colors.grey),
         )
       ],

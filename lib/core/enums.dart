@@ -1,0 +1,4 @@
+enum Section {
+  newAndTrending,
+  forYou,
+}

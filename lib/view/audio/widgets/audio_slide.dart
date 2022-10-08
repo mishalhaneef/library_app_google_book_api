@@ -14,7 +14,7 @@ class AudioSlide extends StatelessWidget {
       inactiveColor: rootColor.withOpacity(0.3),
       min: 0,
       max: 10,
-      value: 1,
+      value: 0,
       onChanged: (value) async {
         // final position = Duration(seconds: value.toInt());
         // await audioPlayer.seek(position);

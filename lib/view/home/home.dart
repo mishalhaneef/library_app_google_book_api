@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:library_api_mvvm/core/constants.dart';
-import 'package:library_api_mvvm/model/book_model.dart';
 import 'package:library_api_mvvm/view/home/widgets/library_list.dart';
 import 'package:library_api_mvvm/view/home/widgets/searchbar.dart';
 import 'package:library_api_mvvm/view/home/widgets/section_head.dart';
@@ -16,15 +15,20 @@ class LibraryHome extends StatelessWidget {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         actions: [
-          IconButton(
-            onPressed: () async {
-              final data =
-                  await Provider.of<BookProvider>(context, listen: false)
-                      .getBooksData();
-              // print('data $data');
-            },
-            icon: Image.asset(notifications, height: 25),
-          ),
+          Consumer<BookProvider>(builder: (context, value, child) {
+            return IconButton(
+              onPressed: () async {
+                value.isFetching
+                    ? await Provider.of<BookProvider>(context, listen: false)
+                        .getForYouBooks ()
+                    : null;
+              },
+              icon: value.isFetching
+                  ? const Icon(Icons.get_app_rounded)
+                  : const Icon(Icons.done),
+              tooltip: 'Fetch API',
+            );
+          }),
           const SizedBox(width: 2)
         ],
         iconTheme: const IconThemeData(color: Colors.black),
@@ -34,17 +38,17 @@ class LibraryHome extends StatelessWidget {
       drawer: const Drawer(),
       body: ListView(
         physics: const BouncingScrollPhysics(),
-        children: [
+        children: const [
           sizedbox,
-          const SearchBar(),
+          SearchBar(),
           sizedbox,
-          const SectionHead(name: 'New & Trending'),
+          SectionHead(name: 'New & Trending'),
           sizedbox,
-          LibraryList(booksList: books),
-          const SizedBox(height: 15),
-          const SectionHead(name: 'For you'),
-          const SizedBox(height: 15),
-          LibraryList(booksList: books.reversed.toList())
+          LibraryList(),
+          SizedBox(height: 15),
+          SectionHead(name: 'For you'),
+          SizedBox(height: 15),
+          LibraryList()
         ],
       ),
     );
