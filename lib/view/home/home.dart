@@ -4,6 +4,8 @@ import 'package:library_api_mvvm/model/book_model.dart';
 import 'package:library_api_mvvm/view/home/widgets/library_list.dart';
 import 'package:library_api_mvvm/view/home/widgets/searchbar.dart';
 import 'package:library_api_mvvm/view/home/widgets/section_head.dart';
+import 'package:library_api_mvvm/view_model/book_provider.dart';
+import 'package:provider/provider.dart';
 
 class LibraryHome extends StatelessWidget {
   const LibraryHome({super.key});
@@ -15,7 +17,12 @@ class LibraryHome extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () async {
+              final data =
+                  await Provider.of<BookProvider>(context, listen: false)
+                      .getBooksData();
+              // print('data $data');
+            },
             icon: Image.asset(notifications, height: 25),
           ),
           const SizedBox(width: 2)

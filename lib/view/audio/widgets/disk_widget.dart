@@ -6,7 +6,8 @@ class DiskWIdget extends StatelessWidget {
   const DiskWIdget({
     Key? key,
     required AnimationController controller,
-  }) : _controller = controller, super(key: key);
+  })  : _controller = controller,
+        super(key: key);
 
   final AnimationController _controller;
 

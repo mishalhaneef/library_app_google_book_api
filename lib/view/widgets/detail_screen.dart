@@ -113,7 +113,7 @@ class BottomCard extends StatelessWidget {
                 ),
                 const SizedBox(width: 30),
                 GestureDetector(
-                  onTap: ()  {
+                  onTap: () {
                     Navigator.of(context).pop();
                     snackBar('Buy option not available', context);
                   },
