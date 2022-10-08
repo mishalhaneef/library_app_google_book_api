@@ -46,6 +46,11 @@ class _AudioBooksState extends State<AudioBooks>
   //     });
   //   });
   // }
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +80,7 @@ class _AudioBooksState extends State<AudioBooks>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text('0:00', style: TextStyle(color: Colors.brown)),
-                  Text('15:45', style: TextStyle(color: Colors.brown)),
+                  Text('01:13:45', style: TextStyle(color: Colors.brown)),
                 ],
               ),
             ),

@@ -8,15 +8,17 @@ class BooksNetwork implements BaseApiServices {
   @override
   Future<BookModel> getNewandTrendingBooks() async {
     try {
+      // fetching response from api
       dynamic response =
           await _apiService.getApiResponse(ApiEndPoint.newAndTrending);
-
+      // converting from json to dart and returning
       return response = BookModel.fromJson(response);
     } catch (e) {
       rethrow;
     }
   }
 
+  /// api fetching for [forYou] section
   @override
   Future<BookModel> getForYouBooks() async {
     try {

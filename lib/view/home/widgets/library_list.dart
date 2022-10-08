@@ -60,9 +60,9 @@ class BookBuild extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        const Text(
-          'Science',
-          style: TextStyle(color: Color(0xFFDAA963)),
+        Text(
+          book!.categories![0],
+          style: const TextStyle(color: Color(0xFFDAA963)),
         ),
         const SizedBox(height: 3),
         SizedBox(

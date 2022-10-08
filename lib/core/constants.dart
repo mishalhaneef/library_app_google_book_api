@@ -3,6 +3,9 @@ import 'package:library_api_mvvm/core/enums.dart';
 
 const Color backgroundColor = Color(0xFFF8F3ED);
 const Color rootColor = Color(0xFFDAA963);
+const bgColor = Color(0xFFEAEDF8);
+const blueColor = Color(0xFF4C94E9);
+const liteBlue = Color(0xFFF4FAFF);
 
 //icons
 const String notifications = "assets/notifications.png";
@@ -23,3 +26,4 @@ const sizedbox = SizedBox(height: 30);
 
 const Section newAndTrending = Section.newAndTrending;
 const Section forYou = Section.forYou;
+const db = 'userData';

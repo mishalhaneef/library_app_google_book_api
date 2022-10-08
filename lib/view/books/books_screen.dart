@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:library_api_mvvm/core/constants.dart';
-import 'package:library_api_mvvm/model/book_model.dart';
 import 'package:library_api_mvvm/view/widgets/detail_screen.dart';
 import 'package:library_api_mvvm/view_model/book_provider.dart';
 import 'package:provider/provider.dart';
@@ -53,6 +52,7 @@ class BookScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final book = data.bookModel.items![index].volumeInfo!;
                         final percentage = index - value;
+                        // clamp means returning num in the given lower upper limit
                         final rotation = percentage.clamp(0.0, 1.0);
                         final fixRotation = pow(rotation, 0.35);
                         return Padding(
@@ -93,7 +93,7 @@ class BookScreen extends StatelessWidget {
                                     Transform(
                                       alignment: Alignment.centerLeft,
                                       transform: Matrix4.identity()
-                                        ..setEntry(3, 2, 0.002)
+                                        ..setEntry(3, 2, 0.001)
                                         ..rotateY(1.8 * fixRotation)
                                         ..translate(
                                             -rotation * size.width * 0.8)
@@ -109,26 +109,29 @@ class BookScreen extends StatelessWidget {
                                 ),
                               )),
                               const SizedBox(height: 90),
-                              Opacity(
-                                opacity: 1 - rotation,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      book.title!,
-                                      style: const TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.w500,
+                              Center(
+                                child: Opacity(
+                                  opacity: 1 - rotation,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        book.title!,
+                                        style: const TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 20),
-                                    Text(
-                                      'by ${book.authors![0]}',
-                                      style: const TextStyle(
-                                          fontSize: 20, color: Colors.grey),
-                                    )
-                                  ],
+                                      const SizedBox(height: 10),
+                                      Text(
+                                        'by ${book.authors![0]}',
+                                        style: const TextStyle(
+                                            fontSize: 15, color: Colors.grey),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               )
                             ],

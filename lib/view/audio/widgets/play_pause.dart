@@ -15,7 +15,7 @@ class PlayPauseButton extends StatelessWidget {
       backgroundColor: rootColor,
       child: IconButton(
           color: backgroundColor,
-          icon: const Icon(Icons.pause),
+          icon: const Icon(Icons.play_arrow),
           iconSize: 30,
           onPressed: onPressed),
     );

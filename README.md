@@ -10,18 +10,11 @@ Build a simple application to showcase your skills in:
 
 1. Building complex UIs [done]
 
-2. Api Integration [nowDoing]
+2. Api Integration [done]
 
-3. State Management with the Provider Package [onNext]
+3. State Management with the Provider Package [done]
 
 Note: Please use the MVVM architecture to architect this application.
-
-
-TODO 
-- get API key [AIzaSyAmulbFCN__Lbnt0o0yjSrN8syhhrcuq0w] ✔️
-- user registration
-- dashboard to display user details
-- button to redirect home ui
 
 Build a simple user registration, login, and dashboard feature with any simple ui of your choice. Use any available public API to fetch a list of books when the user logs into the application, then store that data and display those books to the user when they click on a button on their dashboard to show the books.
 

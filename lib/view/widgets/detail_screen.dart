@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:library_api_mvvm/core/constants.dart';
-import 'package:library_api_mvvm/model/book_model.dart';
 import 'package:library_api_mvvm/model/book_model/volume_info.dart';
 import 'package:library_api_mvvm/view/widgets/snackbar.dart';
 
@@ -23,6 +22,8 @@ Widget buildSheet(VolumeInfo? book, context) {
             child: Text(
               book!.description!,
               textAlign: TextAlign.center,
+              maxLines: 18,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
           const SizedBox(height: 200),
