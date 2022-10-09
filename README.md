@@ -30,7 +30,7 @@ Go to terminal and run the command
 
 ### install and test the application
 
-- to install on emulator from vc code try this command
+- to install on emulator from your IDE try this command
 > flutter build apk --split-per-abi    
 > flutter install 
 
