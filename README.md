@@ -35,7 +35,7 @@ Go to terminal and run the command
 > flutter build apk --split-per-abi    
 > flutter install 
 
-Or try on your physical device. download from [here](https://drive.google.com/file/d/1h0tQGT9v0kWYFVQ-fTNNGQzHMiqYmfuL/view?usp=sharing)
+Or try on your physical device. download from [here](https://drive.google.com/file/d/1P0Xbh9NxrhV_1hIkPosK_QpgXyr1K3_D/view?usp=sharing)
 
 
 ## What I Did
