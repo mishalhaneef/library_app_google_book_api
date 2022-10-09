@@ -47,10 +47,10 @@ A Simple registration screen with username, age, and favorite book. And this dat
 Integrated google book API, and fetches the data to book list sections.
 
 - #### Book Screen (Second Screen)
-Used matrix 4 for the book swiping effect. matrix4 is a 4x4 matrix. With a 4x4 matrix, we can build 3d animations and things on 2d surfaces. we need a 4d matrix to transform an object in 3 dimensions.
+Used matrix 4 for the book swiping effect. matrix4 is a 4x4 matrix. With a 4x4 matrix, we can build 3d animations and things on 2d surfaces. We need a 4d matrix to transform an object in 3 dimensions.
 
 - #### Audio Book Screen
-Tried to use the audio_player package but faced some bugs. So I didn't implement the audio player into this app. but you can see the UI
+Tried to use the audio_player package but faced some bugs. So I didn't implement the audio player into this app, but you can see the UI
 
 
 
