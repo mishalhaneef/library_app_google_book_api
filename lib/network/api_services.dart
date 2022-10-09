@@ -10,6 +10,7 @@ class NetworkApiService {
     try {
       // fetching data from the url
       final response = await http.get(Uri.parse(url));
+      // checking status codes.
       if (response.statusCode == 200 || response.statusCode == 201) {
         responseJson = jsonDecode(response.body);
         // log('$responseJson');
