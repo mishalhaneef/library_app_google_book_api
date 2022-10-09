@@ -40,17 +40,16 @@ or try on your physical device. download from [here](https://drive.google.com/fi
 
 ## What's I Done
 
-- Registration Screen
-
+- #### Registration Screen
 a Simple registration screen with username, age, and favorite book. and this data will be displayed in the dashboard, and also in the home page drawer.
-- Home Screen 
 
+- #### Home Screen 
 integrated google book API, and fetches the data to book list sections.
-- Book Screen (Second Screen)
 
+- #### Book Screen (Second Screen)
 used matrix 4 for the book swiping effect. matrix4 is a 4x4 matrix. with a 4x4 matrix, we can build 3d animations and things on 2d surfaces. we need a 4d matrix to transform an object in 3 dimensions.
-- Audio Book Screen
 
+- #### Audio Book Screen
 tried to use the audio_player package but faces some bugs. so I didn't implement the audio player into this app. but you can see the UI
 
 ## How the app works
