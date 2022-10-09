@@ -63,9 +63,8 @@ there you can fina a button to fetch the api datas on top right.
 
 ## Bugs and Problem 
 
-in the audioplayer faces a lot of bugs and issue. and i dropped the idea due to lack of time.
+in the audioplayer faces a lot of bugs and issues. and I dropped the idea due to lack of time.
+tried to implement another book category for the bottom section (for you section) of the application. but faces some issues. trying to implement that now. you can see the two different codes for implementing two categories in the repository folder
 
-tried to implement another book category for bottom section (for you section) of the application. but faces some issue. trying to implement that now. you can see the two defferent code for implementing two category in repository folder 
-
-#### trying to fix these problem right now, after that will push this again
+### trying to fix these problems right now, after I will push this again
 
