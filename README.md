@@ -16,7 +16,7 @@
 - Flutter - Mobile Development sdk by google
 - provider statemanagement - easy to implement and code
 - Google Api - book api from google
-- MVVM - model-view-view_model architecture. soo easy to understand the code 
+- MVVM - model-view-view_model architecture. it is easy to understand the code 
 - http - future-based library for making HTTP requests
 
 
