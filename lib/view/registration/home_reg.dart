@@ -64,8 +64,8 @@ class RegistrationPage extends StatelessWidget {
                     snackBar(context, 'Enter age', Colors.red);
                   } else if (favouriteBookController.text.isEmpty) {
                     snackBar(context, 'Enter favourite Book', Colors.red);
-                  }
-                  snackBar(context, 'Submitted', Colors.green);
+                  }else {
+                    snackBar(context, 'Submitted', Colors.green);
 
                    Navigator.pushAndRemoveUntil(
                   context,
@@ -74,6 +74,8 @@ class RegistrationPage extends StatelessWidget {
                   ),
                   (route) => false,
                 );
+                  }
+                  
                   // //     ));
                   // nameController.clear();
                   // ageController.clear();
