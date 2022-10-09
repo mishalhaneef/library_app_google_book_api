@@ -1,4 +1,4 @@
-# Book Catelog App [Machine test]
+# Book Catalog App [Machine test]
 
  This is a machine test for [delopus.com](https://www.delopus.com/project)'s machine test
 
