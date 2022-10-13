@@ -1,15 +1,4 @@
-# Book Catalog App [Machine test]
-
- This is a machine test for [delopus.com](https://www.delopus.com/project)'s machine test
-
-## Task
-- login screen
-- user dashboard
-- api integration
-- Better UI
-- provider state management
-- mvvm architecture
-
+# Book Catalog App
 
 # Techstacks I used
 
