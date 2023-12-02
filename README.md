@@ -1,60 +1,81 @@
 # Book Catalog App
 
-# Techstacks I used
+## Overview
 
-- Flutter - Mobile Development sdk by google
-- provider statemanagement - easy to implement and code
-- Google Api - book api from google
-- MVVM - model-view-view_model architecture. it is easy to understand the code 
-- http - future-based library for making HTTP requests
+Welcome to the Book Catalog App, a Flutter-based mobile application designed to manage and explore your book collection. This app incorporates various technologies to provide a seamless user experience, including Google's Book API for fetching book data, the Provider package for state management, and the MVVM (Model-View-ViewModel) architecture for clear code organization.
 
+## Tech Stack
+
+- **Flutter:** Google's SDK for mobile development.
+- **Provider State Management:** An easy-to-implement state management solution.
+- **Google API:** Utilizing the Google Book API to fetch book-related data.
+- **MVVM Architecture:** Embracing the Model-View-ViewModel architecture for clarity and maintainability.
+- **HTTP Package:** Using the HTTP package for making asynchronous HTTP requests.
 
 ## Run The Project
 
-Go to terminal and run the command
-> code .
+To run the project locally, follow these steps:
 
-> flutter emulators --launch < emulator id >
+1. Open your terminal and run:
+   ```bash
+   code .
+   ```
+2. Launch your preferred emulator:
+   ```bash
+   flutter emulators --launch <emulator_id>
+   ```
+3. Run the project:
+   ```bash
+   flutter run
+   ```
 
-> flutter run
+### Installation and Testing
 
-### Install and test the application
+Install the app on an emulator using the following commands:
 
-- To install on emulator from your IDE try this command
-> flutter build apk --split-per-abi    
-> flutter install 
+```bash
+flutter build apk --split-per-abi
+flutter install
+```
 
-Or try on your physical device. download from [here](https://drive.google.com/file/d/1P0Xbh9NxrhV_1hIkPosK_QpgXyr1K3_D/view?usp=sharing)
+Alternatively, download and install the app on your physical device [here](https://drive.google.com/file/d/1P0Xbh9NxrhV_1hIkPosK_QpgXyr1K3_D/view?usp=sharing).
 
+## Key Features
 
-## What I Did
+### Registration Screen
 
-- #### Registration Screen
-A Simple registration screen with username, age, and favorite book. And this data will be displayed in the dashboard, and also in the home page drawer.
+- Simple registration capturing username, age, and favorite book.
+- Displaying this data on the dashboard and the home page drawer.
 
-- #### Home Screen 
-Integrated google book API, and fetches the data to book list sections.
+### Home Screen
 
-- #### Book Screen (Second Screen)
-Used matrix 4 for the book swiping effect. matrix4 is a 4x4 matrix. With a 4x4 matrix, we can build 3d animations and things on 2d surfaces. We need a 4d matrix to transform an object in 3 dimensions.
+- Integration with Google Book API to fetch and display book data.
 
-- #### Audio Book Screen
-Tried to use the audio_player package but faced some bugs. So I didn't implement the audio player into this app, but you can see the UI
+### Book Screen (Second Screen)
 
+- Utilizing Matrix4 for a visually appealing book-swiping effect.
+- Implementing a 4x4 matrix for 3D animations on 2D surfaces.
 
+### Audio Book Screen
 
-## How the app works
+- Attempted integration of the audio_player package for audiobook functionality.
+- Due to bugs, audio features are pending completion.
 
-- Here you can login with your name and age. And you will be redirected to dashboard, from There you can go to home page.
-There you can find a button to fetch the api datas on the top right.
+## App Flow
+
+1. **Registration:**
+   - Login with your name and age, redirected to the dashboard.
+
+2. **Dashboard:**
+   - Navigate to the home page to fetch API data.
 
 ![Fetch API](https://i.postimg.cc/NfHL19Zj/Whats-App-Image-2022-10-09-at-10-12-54-AM.jpg)
 
+## Known Issues
 
-## Bugs and Problems
+- Audioplayer faces bugs and issues; audio features are not implemented yet.
+- Working on fixing problems related to additional book category implementation.
 
-In the audioplayer faces a lot of bugs and issues. And I dropped the idea due to lack of time.
-tried to implement another book category for the bottom section (for you section) of the application. But faces some issues. Trying to implement that now. You can see the two different codes for implementing two categories in the repository folder
+### Ongoing Work
 
-### Trying to fix these problems right now, after I will push this again
-
+Continuously addressing bugs and issues, with a focus on implementing additional features for a smoother user experience.
